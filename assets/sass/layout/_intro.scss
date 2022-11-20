@@ -22,7 +22,7 @@
 		cursor: default;
 		text-align: center;
 		z-index: 1;
-		min-height: 100vh;
+		min-height: 10vh;
 
 		h1 {
 			font-size: 5rem;
@@ -80,7 +80,7 @@
 
 		@include breakpoint('<=medium') {
 			@include padding(_size(padding) * 2, _size(padding) * 2);
-			min-height: 90vh;
+			min-height: 50vh;
 
 			p {
 				br {
@@ -95,7 +95,7 @@
 
 		@include breakpoint('<=small') {
 			@include padding(_size(padding) * 1.5, _size(padding) * 1);
-			min-height: 80vh;
+			min-height: 50vh;
 
 			h1 {
 				font-size: 3.25rem;
