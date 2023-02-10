@@ -4,6 +4,42 @@
 	 * Generate an indented list of links from a nav. Meant for use with panel().
 	 * @return {jQuery} jQuery object.
 	 */
+	$(document).ready(function() {
+		$(".collapsible").click(function() {
+		  $(this).toggleClass("active");
+		  var content = $(this).next(".content");
+		  if (content.css("display") === "block") {
+			content.css("height", -15);
+			setTimeout(function() {
+			  content.css("display", "none");
+			}, 500);
+		  } else {
+			content.css("display", "block");
+			setTimeout(function() {
+			  content.css("height", content[0].scrollHeight + "px");
+			}, 10);
+		  }
+		});
+	  });
+
+	  $(document).ready(function() {
+		$(".collapsible-header").click(function() {
+		  $(this).toggleClass("active");
+		  var content = $(this).next(".collapsible-content");
+		  if (content.css("display") === "block") {
+			content.css("display", "none");
+			content.css("height", "0");
+		  } else {
+			content.css("display", "block");
+			content.css("height", content.prop("scrollHeight") + "px");
+		  }
+		});
+	  });
+
+	/**
+	 * Generate an indented list of links from a nav. Meant for use with panel().
+	 * @return {jQuery} jQuery object.
+	 */
 	$.fn.navList = function() {
 
 		var	$this = $(this);
